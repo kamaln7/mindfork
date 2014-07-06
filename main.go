@@ -1,27 +1,21 @@
 package main
 
-import "os"
+import (
+	"fmt"
 
-type mindfork struct {
-	home  string
-	files []string
-}
+	"github.com/mindfork/mindfork/mindfork"
+)
 
 func main() {
-	// if ~/.mindfork not defined, define it
-	//
+	mf := mindfork.New()
+	msgCh, errCh := mf.Run()
 
-	mf := createNewMindfork()
-	mf.run()
-}
-
-func createNewMindfork() *mindfork {
-	return &mindfork{
-		home:  os.Getenv("HOME") + "/.mindfork",
-		files: []string{},
+	for {
+		select {
+		case msg := <-msgCh:
+			println(msg)
+		case err := <-errCh:
+			fmt.Println("Error received: %s", err.Error())
+		}
 	}
-}
-
-func (mf *mindfork) run() {
-	println("foo")
 }
