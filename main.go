@@ -1,21 +1,12 @@
 package main
 
-import (
-	"fmt"
-
-	"github.com/mindfork/mindfork/mindfork"
-)
+import "github.com/mindfork/mindfork/runner"
 
 func main() {
-	mf := mindfork.New()
-	msgCh, errCh := mf.Run()
-
-	for {
-		select {
-		case msg := <-msgCh:
-			println(msg)
-		case err := <-errCh:
-			fmt.Println("Error received: %s", err.Error())
-		}
+	r, err := runner.Setup()
+	if err != nil {
+		panic(err)
 	}
+
+	r.Run()
 }
