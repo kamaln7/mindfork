@@ -1,6 +1,16 @@
-1 Make a command line runner, Mindfork is an executable to be run as an agent
-1 Make a web client
+bodie;;0;;1;;0;;CLI "terminal client"
+ >
+ + Make a command line runner, Mindfork is an executable to be run as an agent
 
-todo list
+bodie;;1;;1;;0;;Web client 
+ >
+ + Make a web client
 
-user;;priority;;date;;description
+bodie;;2;;2;;2014-07-12-EOD;;TODO file parser
+ + todo list as TODO file
+ + This is a new agent
+ + > uuids;;uuids;;(completion condition uuids)
+ + format: user;;uuid;;priority;;date;;title
+ + notes
+ + external references
+ + etc
