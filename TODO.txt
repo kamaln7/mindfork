@@ -1,0 +1,6 @@
+1 Make a command line runner, Mindfork is an executable to be run as an agent
+1 Make a web client
+
+todo list
+
+user;;priority;;date;;description
